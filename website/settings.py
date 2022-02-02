@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ito(9un7+=z4#sd#^gdlt6rztdo5yndp%lpb!733%7*gyiv)%)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.herokuapp.com']
 
 
 # Application definition
@@ -130,3 +130,23 @@ MEDIA_URL='/media/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# deployment code changes
+
+import django_heroku
+django_heroku.settings(locals())
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
+
+
+# session timeout
+
+
+SESSION_COOKIE_AGE =3600
+SESSION_SAVE_EVERY_REQUEST = True
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+SESSION_COOKIE_SECURE =True
