@@ -43,12 +43,15 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'project.middlewares.UnderConstructionMiddleware',
+    # 'django_session_timeout.middleware.SessionTimeoutMiddleware',
 ]
 
 ROOT_URLCONF = 'website.urls'
@@ -107,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
@@ -132,13 +135,13 @@ MEDIA_URL='/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+
 # deployment code changes
 
 import django_heroku
 django_heroku.settings(locals())
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-
 
 
 # session timeout
