@@ -1,0 +1,41 @@
+{% extends 'blog/base.html' %}
+{% load static  %}
+
+{% block content %}
+<title> SignUp </title>
+<body>
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-lg-12"></div>
+        <p><h4 class="text-center alert alert-info"> CREATE YOUR ACCOUNT </h4></p>
+        <div class="col-sm-5">
+            <h4 class="alert-heading">Sign UP</h4>
+            {% if messages %}
+            {% for message in messages %}
+             <p {% if message.tags %} class="alert alert-{{message.tags}} mb-5"{% endif %}>
+               {{message}}}</p>
+            {% endfor %}
+            {% endif %}
+            
+            <form  class="row gy-2 gx-3 align-items-center" action="" method="POST" novalidate>
+                {% csrf_token %}
+                {{forms.as_p}}
+                 
+                <button type="SUBMIT" class="btn btn-success" value="SUBMIT"> SUBMIT</button><br><br>
+                {% if forms.non_fields_errors %}
+                {% for error in forms.non_fields_errors %}
+                <p class="alert alert-danger my-3">{{errors}}</p>
+                {% endfor %}
+                {% endif %}
+               
+               
+            </form>
+             {% comment %} <a href='/sign/reg/'><button type="SUBMIT" class="btn btn-success" value="SUBMIT"> SUBMIT</button> {% endcomment %}
+        </div>
+        <div class="col-sm-5"><br><br><br><br>
+            <img src="{% static 'blog/images/signup.jpg'  %}"width="600" height="400"/>
+        </div>
+           
+    </div>
+</div>
+{% endblock content %}

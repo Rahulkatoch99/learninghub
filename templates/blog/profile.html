@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+{% load static %}
+{% block content%}
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+    <title>Profile</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+      
+        <!-- Favicons -->
+        <link href="" rel="icon">
+        <link href="" rel="apple-touch-icon">
+      
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
+      
+        <!-- Vendor CSS Files -->
+        <link href="{% static 'blog/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'blog/css/icofont.min.css' %}" rel="stylesheet">
+        <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+        <link href="{% static 'blog/css/animate.min.css' %}" rel="stylesheet">
+        <link href="{% static 'blog/css/venobox.css' %}" rel="stylesheet">
+        <link href="{% static 'blog/css/owl.carousel.min.css' %}" rel="stylesheet">
+        <link href="{% static 'blog/css/aos.css' %}" rel="stylesheet">
+  
+      
+        <!-- Template Main CSS File -->
+        <link href="{% static 'blog/css/style.css' %}" rel="stylesheet">
+        <link href="{% static 'blog/css/custom-style.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+        <style>
+            .top-bar {
+          padding: 5px 0px;
+          background: #333;
+      }
+        </style>
+      </head>
+      
+      <body data-aos-easing="ease-in-out-back" data-aos-duration="1000" data-aos-delay="0"><button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>
+      
+        
+          <div class="top-bar">
+      <div class="container">
+      <div class="row">
+      <div class="col-12">
+      <a href="#" class=""><i class="mr-2 fas fa-envelope" style="color: #fff"></i> <span class="d-none d-md-inline-block text-white">business@learninghub.com</span></a>
+      <span class="mx-md-2 d-inline-block"></span>
+      <a href="#" class=""><i class="mr-2 fas fa-phone-alt" style="color: #fff"></i> <span class="d-none d-md-inline-block text-white">+91 9910935066</span></a>
+      <div class="float-right">
+      <a href="#" class=""><i class="mr-2 fab fa-twitter" style="color: #fff"></i> <span class="d-none d-md-inline-block text-white">Twitter</span></a>
+      <span class="mx-md-2 d-inline-block"></span>
+      <a href="#" class=""><i class="mr-2 fab fa-facebook" style="color: #fff"></i> <span class="d-none d-md-inline-block text-white">Facebook</span></a>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+ <!-- ======= Header ======= -->
+ <div id="header">
+    <div class="container">
+
+      <div class="logo float-left">
+        <!-- Uncomment below if you prefer to use an image logo -->
+         <a href="/" style="overflow: hidden;display: inline-block;" class="top-heading">Profile</a>
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          
+          <li class=""><a href="/logout">Logout</a></li>
+          <li class=""><a href="/profile">Profile</a></li>
+          <li class=""><a href="/changepass">Password Manager</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header></div><!-- End Header -->
+
+        
+    
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->  
+        
+    <div class="container pt-5">
+        <div class="row">
+            <p><h1 class="text-center alert alert-info">User Profile</h1></p>
+            <div class="col-sm-5">
+                <div class="alert alert-success" role="alert">
+                        <h4 class="alert-heading">Welcome</h4>{{name}}
+                        <p>Aww yeah, you successfully login to your profile.</p>
+                        <hr>
+                        <p class="mb-0">Here you can change your account details like your (Username) and some other things.</p>
+                </div>
+                    {% comment %} <div class="alert alert-info"> {% endcomment %}
+                    {% comment %} <h4>Welcome-</h4>{{name}} {% endcomment %}
+                    {% comment %} </div> {% endcomment %}
+                    {% if messages %}
+                    {% for message in messages %}
+                        <p {% if message.tags %} class="alert alert-{{message.tags}} mb-5"{% endif %}>
+                        {{message}}}</p>
+                    {% endfor %}
+                    {% endif %}
+                    <form action="" method="POST" novalidate>
+                        {% csrf_token %}
+                        {% for fm in form %}
+                        
+                        <div  class="form-table" >
+                            <li>{{fm.label_tag}} {{fm}} <small class="text-warning"> {{fm.errors|striptags}}</small></li><br>
+                        </div>
+                        {% endfor %}
+                        <input type="submit" class="btn btn-success" value="Submit">
+                        {% if form.non_fields_errors %}
+                        {% for error in form.non_fields_errors %}
+                        <p class="alert alert-danger my-3">{{errors}}</p>
+                        {% endfor %}
+                        {% endif %}
+                    </form>
+                    <script src="" async defer></script>
+                </div>
+                {% comment %} <div class="col-sm-1"></div> {% endcomment %}
+                <div class="col-sm-1"></div>
+                <div class="col-sm-5 mt-5">
+                    <div>
+                      <img src="{% static 'blog/images/profile.jfif' %}" class="img-fluid"  width='520' height='400'/ >
+                    </div>
+                </div>
+        </div>
+    </div>           
+{% endblock content %}
+<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'blog/js/jquery.min.js' %}"></script>
+  <script src="{% static 'blog/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'blog/js/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'blog/js/validate.js' %}"></script>
+  <script src="{% static 'blog/js/jquery.sticky.js'%}"></script>
+  <script src="{% static 'blog/js/venobox.min.js' %}"></script>
+  <script src="{% static 'blog/js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'blog/js/counterup.min.js' %}"></script>
+  <script src="{% static 'blog/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'blog/js/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'blog/js/aos.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'blog/js/main.js' %}"></script>
+</html>

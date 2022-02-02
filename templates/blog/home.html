@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html class="static-homepage" lang="en">
+<head>
+  <title>Learning Hub</title>
+  <meta name="description" content="Learning Hub is a fun and free online course from General Assembly that teaches you how to program with the basics of web development through projects you can do right in your browser. Get started today!">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   <!-- Vendor CSS Files -->
+   <link href="{% static 'blog/css/bootstrap.min.css' %}" rel="stylesheet">
+   <link href="{% static 'blog/css/icofont.min.css' %}" rel="stylesheet">
+   <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+   <link href="{% static 'blog/css/animate.min.css' %}" rel="stylesheet">
+   <link href="{% static 'blog/css/venobox.css' %}" rel="stylesheet">
+   <link href="{% static 'blog/css/owl.carousel.min.css' %}" rel="stylesheet">
+   <link href="{% static 'blog/css/aos.css' %}" rel="stylesheet">
+ 
+   <!-- Template Main CSS File -->
+   <link href="{% static 'blog/css/style.css' %}" rel="stylesheet">
+   <link href="{% static 'blog/css/custom-style.css' %}" rel="stylesheet">
+   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+   <style>
+       .top-bar {
+     padding: 5px 0px;
+     background: #333;
+ }
+   </style>
+</head>
+<body>
+
+    <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container">
+
+      <div class="logo float-left">
+        <!-- Uncomment below if you prefer to use an image logo -->
+         <a href="/" style="overflow: hidden;display: inline-block;" class="top-heading">Learning Hub</a>
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="/">Home</a></li>
+          <li class=""><a href="/login">Login</a></li>
+          <li class=""><a href="/signup">Signup</a></li>
+          <li class=""><a href="/about">About Us</a></li>
+          {% comment %} <li class=""><a href="/services">Services</a></li> {% endcomment %}
+          <li class=""><a href="/contact">Contact Us</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero">
+        <div class="hero-container">
+          <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+    
+            <div class="carousel-inner" role="listbox">
+    
+              <!-- Slide 1 -->
+              <div class="carousel-item active" style="background-image: url({% static 'blog/images/homeimg.jpg' %});">
+                <div class="carousel-container">
+                  <div class="carousel-content container">
+                    <h2 class="animate__animated animate__fadeInDown">Any fool can write a code that a computer can understand.<span>Strategy</span></h2>
+                    <p class="animate__animated animate__fadeInUp">Good programmers write a code that humans can understand</p>
+                    <a data-analytics="home-signup" href="/auth/generalassembly?state=signup">Start Learning</a>
+                  </div>
+                </div>
+              </div>
+    
+            </div>
+    
+          </div>
+        </div>
+      </section><!-- End Hero -->
+    
+      <main id="main">
+
+
+        <section id="" class="Python">
+            <div class="container">
+      
+              <div class="row no-gutters">
+      
+                <div class="col-lg-12 d-flex flex-column justify-content-center about-content">
+      
+                  <div class="section-title">
+                    <h2>PYTHON</h2>
+                    <h3> Learning Hub is a fun and free online course that teaches you the basics of web development through projects you can do in your browser.</h3>
+                    <li>
+                        <img alt="Learn the right way to code PYTHON" src="{% static  'blog/images/slide-2.jpg' %}" />
+                    </li>
+                    <p>We understand the importance of each survey and our team works flawlessly to ensure that each project is delivered as committed by us. We care about your business and know that with each successful delivery.</p>
+                    <p>We take pride in deploying technology to the best use possible, and keep ourselves educated with all technical and industry updates and enhancements. We want to provide the best possible experience to our panelists, and reward them more than just for that particular survey.</p>
+                    <p>Question Quest operate 24/7, meaning that we can connect with hard-to-reach individual regardless of their time zone or shift pattern. </p>
+                  </div>
+      
+                </div>
+              </div>
+      
+            </div>
+          </section>
+          <!-- End About Us Section -->
+   
+
+  <!-- Flash notices -->
+
+
+<footer id="footer">
+    
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Learning Hub</span></strong>. All Rights Reserved
+      </div>
+      <div class="text-center"><b>THE WAY YOU THINK WE CAN</b></div>
+    </div>
+  </footer><!-- End Footer -->
+<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'blog/js/jquery.min.js' %}"></script>
+  <script src="{% static 'blog/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'blog/js/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'blog/js/validate.js' %}"></script>
+  <script src="{% static 'blog/js/jquery.sticky.js'%}"></script>
+  <script src="{% static 'blog/js/venobox.min.js' %}"></script>
+  <script src="{% static 'blog/js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'blog/js/counterup.min.js' %}"></script>
+  <script src="{% static 'blog/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'blog/js/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'blog/js/aos.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'blog/js/main.js' %}"></script>
+
+
+  {% comment %} <script src="//ga-dash.s3.amazonaws.com/production/assets/application-e605e8e3f78981761ecd3c49ce76b978f76551c9d3efa566a0e5e5f76a52a75d.js"></script> {% endcomment %}
+  
+</body>
+</html>
